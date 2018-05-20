@@ -12,8 +12,10 @@
             </test-roots>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>addressBook</word>
             <word>cellno</word>
             <word>dbmanager</word>
+            <word>NetBeans</word>
             <word>phno</word>
         </spellchecker-wordlist>
     </configuration>

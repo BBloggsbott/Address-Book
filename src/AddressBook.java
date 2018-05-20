@@ -3,7 +3,7 @@ import guis.HomeFrame;
 
 /**
  * The class having the Main Function for the Address Book
- * @author 
+ * @author bbloggsbott
  */
 public class AddressBook {
     

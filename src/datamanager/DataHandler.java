@@ -6,7 +6,7 @@ package datamanager;
 import java.util.HashMap;
 /**
  *This Class is to Handle the data structures in the address book
- * @author 
+ * @author bbloggsbott
  */
 public class DataHandler {
     HashMap data;

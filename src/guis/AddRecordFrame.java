@@ -22,7 +22,7 @@ import java.sql.Connection;
 
 /**
  * The is the Class for the Window to add a record to the Database
- * @author 
+ * @author bbloggsbott
  */
 public class AddRecordFrame extends Frame implements ActionListener,WindowListener{
    Label title,idLabel,nameLabel,addressLabel,dobLabel,phnoLabel,cellnoLabel;

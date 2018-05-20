@@ -15,7 +15,7 @@ import java.util.HashMap;
 /**
 * DBHandler is used to create connection to databases 
 * and perform other operations on the database. 
-* @author 
+* @author bbloggsbott
  */
 public class DBHandler {
     
@@ -113,7 +113,7 @@ public class DBHandler {
      * @param tableName The table name from which data is to be fetched
      * @return ResultSet The result set of the select query
      */
-    public ResultSet searchElements(Connection conn,int ID,String tableName){
+    public ResultSet searchID(Connection conn,int ID,String tableName){
         ResultSet rs = null;
         PreparedStatement ps;
         try{
@@ -135,7 +135,7 @@ public class DBHandler {
      * @param tableName The Table to be searched in
      * @return ResultSet The Search Results
      */
-    public ResultSet searchElements(Connection conn,String name,String tableName){
+    public ResultSet searchName(Connection conn,String name,String tableName){
         ResultSet rs = null;
         PreparedStatement ps;
         try{
@@ -184,6 +184,68 @@ public class DBHandler {
         try{
             ps = conn.prepareStatement("select * from "+tableName+" where cellno like ?");
             ps.setString(1,"%"+cellno+"%");
+            rs = ps.executeQuery();
+        }
+        catch(SQLException se){
+            se.printStackTrace();
+        }
+        return rs;
+    }
+    
+    
+    public ResultSet searchNamePhno(Connection conn,String name,String phno,String tableName){
+        ResultSet rs = null;
+        PreparedStatement ps;
+        try{
+            ps = conn.prepareStatement("select * from "+tableName+" where phno like ? and name like ?");
+            ps.setString(1,"%"+phno+"%");
+            ps.setString(2,"%"+name+"%");
+            rs = ps.executeQuery();
+        }
+        catch(SQLException se){
+            se.printStackTrace();
+        }
+        return rs;
+    }
+    
+    public ResultSet searchNameCellno(Connection conn,String name,String cellno,String tableName){
+        ResultSet rs = null;
+        PreparedStatement ps;
+        try{
+            ps = conn.prepareStatement("select * from "+tableName+" where cellno like ? and name like ?");
+            ps.setString(1,"%"+cellno+"%");
+            ps.setString(2,"%"+name+"%");
+            rs = ps.executeQuery();
+        }
+        catch(SQLException se){
+            se.printStackTrace();
+        }
+        return rs;
+    }
+    
+    public ResultSet searchPhnoCellno(Connection conn,String phno,String cellno,String tableName){
+        ResultSet rs = null;
+        PreparedStatement ps;
+        try{
+            ps = conn.prepareStatement("select * from "+tableName+" where phno like ? and cellno like ?");
+            ps.setString(1,"%"+phno+"%");
+            ps.setString(2,"%"+cellno+"%");
+            rs = ps.executeQuery();
+        }
+        catch(SQLException se){
+            se.printStackTrace();
+        }
+        return rs;
+    }
+    
+    public ResultSet searchNamePhnoCellno(Connection conn,String name,String phno,String cellno,String tableName){
+        ResultSet rs = null;
+        PreparedStatement ps;
+        try{
+            ps = conn.prepareStatement("select * from "+tableName+" where phno like ? and name like ? and cellno like ?");
+            ps.setString(1,"%"+phno+"%");
+            ps.setString(2,"%"+name+"%");
+            ps.setString(3,"%"+cellno+"%");
             rs = ps.executeQuery();
         }
         catch(SQLException se){

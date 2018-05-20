@@ -18,7 +18,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 /**
  *This class acts as the Home Window of the AddressBook
- * @author 
+ * @author bbloggsbott
  */
 public class HomeFrame extends Frame implements ActionListener,WindowListener{
     Button add,delete,searchButton;

@@ -20,7 +20,7 @@ import java.sql.ResultSet;
 
 /**
  * Frame to Search for Records from the Database
- * @author 
+ * @author bbloggsbott
  */
 public class SearchRecordFrame extends Frame implements ActionListener,TextListener,WindowListener {
     Label title,idLabel,nameLabel,addressLabel,phnoLabel,cellnoLabel;
@@ -126,9 +126,10 @@ public class SearchRecordFrame extends Frame implements ActionListener,TextListe
      */
     @Override
     public void textValueChanged(TextEvent e) {
+        
         if(e.getSource() == idSearch){
             try{
-                rs = db.searchElements(conn,Integer.parseInt(idSearch.getText()),tableName);
+                rs = db.searchID(conn,Integer.parseInt(idSearch.getText()),tableName);
             }
             catch(NumberFormatException ne){
                 //Nothing to do
@@ -155,13 +156,129 @@ public class SearchRecordFrame extends Frame implements ActionListener,TextListe
                 idResult.setText("Error - Not Found");
             }
         }
+        else if(!nameSearch.getText().isEmpty() && !phnoSearch.getText().isEmpty() && !cellnoSearch.getText().isEmpty()){
+            idResult.setText("");
+            nameResult.setText("");
+            addressResult.setText("");
+            phnoResult.setText("");
+            cellnoResult.setText("");
+            rs = db.searchNamePhnoCellno(conn,nameSearch.getText(),phnoSearch.getText(),cellnoSearch.getText(),tableName);
+            try{
+                if(rs.next()){
+                    do{
+                        idResult.append(rs.getInt("id")+"\n");
+                        nameResult.append(rs.getInt("id")+" - "+rs.getString("name")+"\n");
+                        addressResult.append(rs.getInt("id")+" - "+rs.getString("address")+"\n");
+                        phnoResult.append(rs.getInt("id")+" - "+rs.getString("phno")+"\n");
+                        cellnoResult.append(rs.getInt("id")+" - "+rs.getString("cellno")+"\n");
+                    }while(rs.next());
+                }
+                else{
+                    idResult.setText("Not\nFound");
+                    nameResult.setText("Not Found");
+                    addressResult.setText("Not Found");
+                    phnoResult.setText("Not Found");
+                    cellnoResult.setText("Not Found");
+                }
+            }
+            catch(Exception se){
+                idResult.setText("Error - Not Found");
+            }
+        }
+        else if(!nameSearch.getText().isEmpty() && !phnoSearch.getText().isEmpty()){
+            idResult.setText("");
+            nameResult.setText("");
+            addressResult.setText("");
+            phnoResult.setText("");
+            cellnoResult.setText("");
+            rs = db.searchNamePhno(conn,nameSearch.getText(),phnoSearch.getText(),tableName);
+            try{
+                if(rs.next()){
+                    do{
+                        idResult.append(rs.getInt("id")+"\n");
+                        nameResult.append(rs.getInt("id")+" - "+rs.getString("name")+"\n");
+                        addressResult.append(rs.getInt("id")+" - "+rs.getString("address")+"\n");
+                        phnoResult.append(rs.getInt("id")+" - "+rs.getString("phno")+"\n");
+                        cellnoResult.append(rs.getInt("id")+" - "+rs.getString("cellno")+"\n");
+                    }while(rs.next());
+                }
+                else{
+                    idResult.setText("Not\nFound");
+                    nameResult.setText("Not Found");
+                    addressResult.setText("Not Found");
+                    phnoResult.setText("Not Found");
+                    cellnoResult.setText("Not Found");
+                }
+            }
+            catch(Exception se){
+                idResult.setText("Error - Not Found");
+            }
+        }
+        else if(!nameSearch.getText().isEmpty() && !cellnoSearch.getText().isEmpty()){
+            idResult.setText("");
+            nameResult.setText("");
+            addressResult.setText("");
+            phnoResult.setText("");
+            cellnoResult.setText("");
+            rs = db.searchNameCellno(conn,nameSearch.getText(),cellnoSearch.getText(),tableName);
+            try{
+                if(rs.next()){
+                    do{
+                        idResult.append(rs.getInt("id")+"\n");
+                        nameResult.append(rs.getInt("id")+" - "+rs.getString("name")+"\n");
+                        addressResult.append(rs.getInt("id")+" - "+rs.getString("address")+"\n");
+                        phnoResult.append(rs.getInt("id")+" - "+rs.getString("phno")+"\n");
+                        cellnoResult.append(rs.getInt("id")+" - "+rs.getString("cellno")+"\n");
+                    }while(rs.next());
+                }
+                else{
+                    idResult.setText("Not\nFound");
+                    nameResult.setText("Not Found");
+                    addressResult.setText("Not Found");
+                    phnoResult.setText("Not Found");
+                    cellnoResult.setText("Not Found");
+                }
+            }
+            catch(Exception se){
+                idResult.setText("Error - Not Found");
+            }
+        }
+        else if(!phnoSearch.getText().isEmpty() && !cellnoSearch.getText().isEmpty()){
+            idResult.setText("");
+            nameResult.setText("");
+            addressResult.setText("");
+            phnoResult.setText("");
+            cellnoResult.setText("");
+            rs = db.searchPhnoCellno(conn,phnoSearch.getText(),cellnoSearch.getText(),tableName);
+            try{
+                if(rs.next()){
+                    do{
+                        idResult.append(rs.getInt("id")+"\n");
+                        nameResult.append(rs.getInt("id")+" - "+rs.getString("name")+"\n");
+                        addressResult.append(rs.getInt("id")+" - "+rs.getString("address")+"\n");
+                        phnoResult.append(rs.getInt("id")+" - "+rs.getString("phno")+"\n");
+                        cellnoResult.append(rs.getInt("id")+" - "+rs.getString("cellno")+"\n");
+                    }while(rs.next());
+                }
+                else{
+                    idResult.setText("Not\nFound");
+                    nameResult.setText("Not Found");
+                    addressResult.setText("Not Found");
+                    phnoResult.setText("Not Found");
+                    cellnoResult.setText("Not Found");
+                }
+            }
+            catch(Exception se){
+                idResult.setText("Error - Not Found");
+            }
+        }
         else if(e.getSource() == nameSearch){
             idResult.setText("");
             nameResult.setText("");
             addressResult.setText("");
             phnoResult.setText("");
             cellnoResult.setText("");
-            rs = db.searchElements(conn,nameSearch.getText(),tableName);
+            rs = db.searchName(conn,nameSearch.getText(),tableName);
             try{
                 if(rs.next()){
                     do{

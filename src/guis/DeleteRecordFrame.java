@@ -19,7 +19,7 @@ import java.sql.ResultSet;
 
 /**
  *This is the Frame to delete a record from the database
- * @author 
+ * @author bbloggsbott
  */
 public class DeleteRecordFrame extends Frame implements ActionListener,WindowListener,TextListener {
     Label title, idLabel,nameLabel;
@@ -120,7 +120,7 @@ public class DeleteRecordFrame extends Frame implements ActionListener,WindowLis
     public void textValueChanged(TextEvent e) { 
         if(e.getSource() == idText){
             try{
-                rs = db.searchElements(conn,Integer.parseInt(idText.getText()),tableName);
+                rs = db.searchID(conn,Integer.parseInt(idText.getText()),tableName);
                 if(rs.next()){
                     do{
                         nameText.setText(rs.getString("name"));
