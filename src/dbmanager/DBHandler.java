@@ -192,7 +192,14 @@ public class DBHandler {
         return rs;
     }
     
-    
+    /**
+     *  A function to search for elements based on their name and phno
+     * @param conn The connection to the Database
+     * @param name The name to be searched for
+     * @param phno The phno to be searched for
+     * @param tableName The Table to be searched in
+     * @return ResultSet The Result of the Search
+     */
     public ResultSet searchNamePhno(Connection conn,String name,String phno,String tableName){
         ResultSet rs = null;
         PreparedStatement ps;
@@ -208,6 +215,14 @@ public class DBHandler {
         return rs;
     }
     
+    /**
+     *  A function to search for elements based on their name and cellno
+     * @param conn The connection to the Database
+     * @param name The name to be searched for
+     * @param cellno The cellno to be searched for
+     * @param tableName The Table to be searched in
+     * @return ResultSet The Result of the Search
+     */
     public ResultSet searchNameCellno(Connection conn,String name,String cellno,String tableName){
         ResultSet rs = null;
         PreparedStatement ps;
@@ -223,6 +238,14 @@ public class DBHandler {
         return rs;
     }
     
+    /**
+     *  A function to search for elements based on their phno and cell no
+     * @param conn The connection to the Database
+     * @param phno The phno to be searched for
+     * @param cellno The cellno to be searched for
+     * @param tableName The Table to be searched in
+     * @return ResultSet The Result of the Search
+     */
     public ResultSet searchPhnoCellno(Connection conn,String phno,String cellno,String tableName){
         ResultSet rs = null;
         PreparedStatement ps;
@@ -238,6 +261,15 @@ public class DBHandler {
         return rs;
     }
     
+    /**
+     *  A function to search for elements based on their name, phno and cell no
+     * @param conn The connection to the Database
+     * @param name The name to be searched for
+     * @param phno The phno to be searched for
+     * @param cellno The cellno to be searched for
+     * @param tableName The Table to be searched in
+     * @return ResultSet The Result of the Search
+     */
     public ResultSet searchNamePhnoCellno(Connection conn,String name,String phno,String cellno,String tableName){
         ResultSet rs = null;
         PreparedStatement ps;
