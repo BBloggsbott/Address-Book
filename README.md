@@ -36,4 +36,4 @@ click on that Database and Connected. Once connected, it should look like this:
 
 
 
-**To view the Javadoc, ![Click here](https://bbloggsbott.github.io/Address-Book/)**
+**To view the Javadoc, [Click here](https://bbloggsbott.github.io/Address-Book/)**
