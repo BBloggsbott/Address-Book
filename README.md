@@ -31,4 +31,5 @@ Click on the "Back" button to return to the Home Page.
 ## Instructions before running the code in NetBeans
 * In the “Services” Tab, make sure that the addressBook Database is connected. If not, Right
 click on that Database and Connected. Once connected, it should look like this:
+
  ![Database Connected](db-connected.png)
