@@ -36,7 +36,6 @@ public class DBHandler {
         }
         catch(Exception se){
             se.printStackTrace();
-            //Add Logger
         }
         return conn;
     }
@@ -55,7 +54,7 @@ public class DBHandler {
             return true;
         }
         catch(SQLException se){
-            //Add Logger
+            se.printStackTrace();
         }
         return false;
     }   
@@ -81,7 +80,7 @@ public class DBHandler {
             return true;
         }
         catch(SQLException se){
-            //Add logger
+            se.printStackTrace();
         }
         return false;
     }
@@ -101,7 +100,7 @@ public class DBHandler {
             ps.executeUpdate();
         }
         catch(SQLException se){
-            //Add logs
+            se.printStackTrace();
         }
         return false;
     }
@@ -122,7 +121,7 @@ public class DBHandler {
             rs = ps.executeQuery();
         }
         catch(SQLException se){
-            //Add logs
+
             se.printStackTrace();
         }
         return rs;
@@ -144,7 +143,7 @@ public class DBHandler {
             rs = ps.executeQuery();
         }
         catch(SQLException se){
-            //Add logs
+
             se.printStackTrace();
         }
         return rs;
