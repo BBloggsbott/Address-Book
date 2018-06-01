@@ -37,6 +37,6 @@ click on that Database and connect it. In NetBeans, when connected it should loo
 
 ## Guidelins for contributors
 
-Please follow the [Pull Request Template](https://github.com/BBloggsbott/Address-Book/blob/master/PULL_REQUEST_TEMPLATE.md1111) while making a PR.
+Please follow the [Pull Request Template](https://github.com/BBloggsbott/Address-Book/blob/master/PULL_REQUEST_TEMPLATE.md) while making a PR.
 
 **To view the Javadoc, [Click here](https://bbloggsbott.github.io/Address-Book/)**
