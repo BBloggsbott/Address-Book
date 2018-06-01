@@ -8,6 +8,7 @@ If you would like to contribute code, documentation, or other assets you can do 
 File an Issue
 -------------
 You can report bugs and feature requests to [GitHub Issues](https://github.com/BBloggsbott/Address-Book/issues). As mentioned please look for a similar existing issue before submitting a new one.
+Label issues with the corrsponding [labels](https://github.com/BBloggsbott/Address-Book/labels)
 
 How to Submit a Pull Request
 ----------------------------
