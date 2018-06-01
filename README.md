@@ -35,7 +35,7 @@ click on that Database and connect it. In NetBeans, when connected it should loo
 
  ![Database Connected](db-connected.png)
 
-##Guidelins for contributors
+## Guidelins for contributors
 
 Please follow the [Pull Request Template](https://github.com/BBloggsbott/Address-Book/blob/master/PULL_REQUEST_TEMPLATE.md1111) while making a PR.
 
