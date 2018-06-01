@@ -31,7 +31,7 @@ public class DBHandler {
         Connection conn = null;
         try{
             Class.forName("org.apache.derby.jdbc.ClientDriver");
-            String url = "jdbc:derby://localhost:1527/addressBook";
+            String url = "jdbc:derby://localhost:1527/"+dbName;
             conn = DriverManager.getConnection(url);
         }
         catch(Exception se){
