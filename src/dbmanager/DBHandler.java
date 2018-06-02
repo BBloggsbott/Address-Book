@@ -50,7 +50,7 @@ public class DBHandler {
         Statement s;
         try{
             s = conn.createStatement();
-            s.executeUpdate("create table "+tableName+"(ID integer primary key,Name varcha(20),Address Varchar(100),DOB varchar(10),Phno integer,CellNo integer)");
+            s.executeUpdate("create table "+tableName+" (ID integer primary key,Name varchar(20),Address Varchar(100),DOB varchar(10),Phno varchar(13),CellNo varchar(13))");
             return true;
         }
         catch(SQLException se){
